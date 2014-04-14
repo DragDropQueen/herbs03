@@ -4,6 +4,11 @@ require_relative '../herb_app'
 Capybara.app = HerbApp
 
 feature "User can manage herb cache" do
+
+  before do
+    DB[:herb].delete
+  end
+
   scenario "User can add herb to list" do
     visit '/'
     herb_name = "motherwort"
@@ -12,4 +17,5 @@ feature "User can manage herb cache" do
     click_on "Collect"
     expect(page).to have_content(herb_name)
   end
+
 end

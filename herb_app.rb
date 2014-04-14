@@ -3,11 +3,14 @@ require 'sinatra/base'
 
 class HerbApp < Sinatra::Application
   get '/' do
-    erb :index
+    herb_table = DB[:herb]
+    erb :index, :locals => {herbs: herb_table.to_a}
   end
 
   post '/' do
-    params[:herb_name]
+    herb_table = DB[:herb]
+    herb_table.insert(name: params[:herb_name])
+    redirect '/'
   end
 
 end

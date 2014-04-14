@@ -3,3 +3,9 @@
   <input type="submit" value="Collect">
 
 </form>
+<hr>
+<ul>
+  <% herbs.each do |herb|%>
+  <li><%= herb[:name] %></li>
+    <% end %>
+</ul>
