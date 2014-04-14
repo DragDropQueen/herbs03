@@ -1,11 +1,12 @@
 <form action="/" method="post">
   <input type="text" placeholder="Herb Name" name="herb_name">
+  <input type="text" placeholder="Herb Part" name="herb_part">
   <input type="submit" value="Collect">
 
 </form>
 <hr>
 <ul>
   <% herbs.each do |herb|%>
-  <li><%= herb[:name] %></li>
+  <li><%= herb[:name] %> | <%= herb[:part] %> </li>
     <% end %>
 </ul>

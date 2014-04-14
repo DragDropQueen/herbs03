@@ -9,7 +9,7 @@ class HerbApp < Sinatra::Application
 
   post '/' do
     herb_table = DB[:herb]
-    herb_table.insert(name: params[:herb_name])
+    herb_table.insert(name: params[:herb_name], part: params[:herb_part])
     redirect '/'
   end
 
