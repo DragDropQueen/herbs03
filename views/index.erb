@@ -7,6 +7,6 @@
 <hr>
 <ul>
   <% herbs.each do |herb|%>
-  <li><%= herb[:name] %> | <%= herb[:part] %> </li>
+  <li><%= herb[:name] %> | <%= herb[:part] %> | <a href="/update/<%= herb[:id] %>">Update</a></li>
     <% end %>
 </ul>

@@ -21,4 +21,22 @@ feature "User can manage herb cache" do
     expect(page).to have_content(herb_part)
   end
 
+  scenario "User can update herbs" do
+    visit '/'
+    old_herb_name = "violets"
+    old_herb_part = "aerial parts"
+    new_herb_name = "violet"
+    new_herb_part = "leaf and flower"
+    fill_in "Herb Name", with: old_herb_name
+    fill_in "Herb Part", with: old_herb_part
+    click_on "Collect"
+    expect(page).to have_content(old_herb_name)
+    click_on "Update"
+    fill_in "Herb Name", with: new_herb_name
+    fill_in "Herb Part", with: new_herb_part
+    click_on "Update"
+    expect(page).to have_content(new_herb_name)
+    expect(page).to have_content(new_herb_part)
+  end
+
 end

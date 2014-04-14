@@ -1,0 +1,7 @@
+<h3>Editing: <%= herb.first[:name] %> | <%= herb.first[:part] %></h3>
+<form action="/update/<%= herb_id %>" method="post">
+  <input type="text" placeholder="Herb Name" name="herb_name">
+  <input type="text" placeholder="Herb Part" name="herb_part">
+  <input type="submit" value="Update">
+
+</form>
