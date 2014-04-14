@@ -9,7 +9,7 @@ feature "User can manage herb cache" do
     DB[:herb].delete
   end
 
-  scenario "User can add herb to list" do
+  scenario "User can add herb to list and see list" do
     visit '/'
     herb_name = "motherwort"
     herb_part = "aerial parts"
