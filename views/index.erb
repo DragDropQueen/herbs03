@@ -1,3 +1,4 @@
+<h1>Herbal Apothecary Collection</h1>
 <form action="/" method="post">
   <input type="text" placeholder="Herb Name" name="herb_name">
   <input type="text" placeholder="Herb Part" name="herb_part">
@@ -7,6 +8,7 @@
 <hr>
 <ul>
   <% herbs.each do |herb|%>
-  <li><%= herb[:name] %> | <%= herb[:part] %> | <a href="/update/<%= herb[:id] %>">Update</a></li>
+  <li><%= herb[:name] %> | <%= herb[:part] %> |
+    <a href="/update/<%= herb[:id] %>">Update</a> | <a href="/delete/<%= herb[:id] %>">Delete</a></li>
     <% end %>
 </ul>

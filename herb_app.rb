@@ -25,4 +25,10 @@ class HerbApp < Sinatra::Application
     redirect '/'
   end
 
+  get '/delete/:herb_id' do
+    herb_table = DB[:herb]
+    herb_table.where(id: params[:herb_id]).delete
+    redirect '/'
+  end
+
 end
